@@ -63,20 +63,12 @@ export default function HeroSection() {
             Supplying export-quality poultry products across India and global markets.
           </p>
 
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="#products"
-              className="inline-flex items-center justify-center rounded-xl bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground transition-all hover:scale-105 hover:bg-red-light"
-            >
-              Explore Products
-            </Link>
-            <Link
-              href="#contact"
-              className="inline-flex items-center justify-center rounded-xl border-2 border-primary-foreground/30 px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:scale-105 hover:border-primary-foreground hover:bg-primary-foreground/10"
-            >
-              Become a Distributor
-            </Link>
-          </div>
+          <Link
+            href="#products"
+            className="inline-flex items-center justify-center rounded-xl bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground transition-all hover:scale-105 hover:bg-red-light"
+          >
+            Explore Products
+          </Link>
         </div>
 
         {/* Trust Badges */}

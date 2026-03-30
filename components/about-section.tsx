@@ -15,8 +15,17 @@ export default function AboutSection() {
   const sectionRef = useScrollReveal<HTMLElement>()
 
   return (
-    <section id="about" ref={sectionRef} className="bg-background py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+    <section id="about" ref={sectionRef} className="relative bg-background py-20 lg:py-28">
+      {/* Background Image */}
+      <Image
+        src="/images/about-bg.jpg"
+        alt="About section background"
+        fill
+        className="absolute inset-0 object-cover opacity-25"
+        quality={90}
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:gap-16">
           {/* Left - Image */}
           <div className="relative w-full lg:w-1/2">

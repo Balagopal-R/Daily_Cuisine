@@ -74,14 +74,8 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* CTA + Mobile Toggle */}
+        {/* Mobile Toggle */}
         <div className="flex items-center gap-3">
-          <Link
-            href="#contact"
-            className="hidden items-center gap-2 rounded-xl bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-all hover:scale-105 hover:bg-red-light sm:flex"
-          >
-            Become a Distributor
-          </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={`flex items-center justify-center rounded-lg p-2 lg:hidden transition-colors ${
@@ -108,13 +102,6 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="#contact"
-              className="mt-4 flex items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground"
-              onClick={() => setMobileOpen(false)}
-            >
-              Become a Distributor
-            </Link>
           </nav>
         </div>
       )}

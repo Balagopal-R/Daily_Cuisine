@@ -1,6 +1,6 @@
 "use client"
 
-import Link from "next/link"
+import Image from "next/image"
 import { Globe, Building2, Ship, Tag } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
@@ -62,15 +62,6 @@ export default function DistributionSection() {
               <p className="text-sm leading-relaxed text-primary-foreground/70">{block.description}</p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-12 text-center">
-          <Link
-            href="#contact"
-            className="inline-flex items-center justify-center rounded-xl bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground transition-all hover:scale-105 hover:bg-red-light"
-          >
-            Send Business Inquiry
-          </Link>
         </div>
       </div>
     </section>

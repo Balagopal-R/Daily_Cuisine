@@ -22,23 +22,23 @@ export default function LeadershipSection() {
   const sectionRef = useScrollReveal<HTMLElement>()
 
   return (
-    <section id="leadership" ref={sectionRef} className="bg-background py-20 lg:py-28">
+    <section id="leadership" ref={sectionRef} className="bg-background py-8 lg:py-12">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         {/* Header */}
-        <div className="mb-16 text-center">
-          <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-accent">
+        <div className="mb-10 text-center">
+          <span className="mb-2 inline-block text-xs font-semibold uppercase tracking-widest text-accent">
             Leadership Team
           </span>
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+          <h2 className="mb-2 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             <span className="text-balance">Leadership</span>
           </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
+          <p className="mx-auto max-w-2xl text-sm text-muted-foreground">
             Meet the visionary leaders driving Daily Cuisine toward excellence in frozen poultry exports.
           </p>
         </div>
 
         {/* Leaders Grid */}
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2">
           {leaders.map((leader, idx) => (
             <div
               key={leader.name}
@@ -50,18 +50,18 @@ export default function LeadershipSection() {
                   src={leader.image}
                   alt={leader.name}
                   width={400}
-                  height={500}
-                  className="aspect-[3/4] w-full object-cover"
+                  height={350}
+                  className="aspect-[4/3] w-full object-cover"
                 />
               </div>
 
               {/* Content */}
-              <div className="w-full flex-1 p-8 text-center">
+              <div className="w-full flex-1 p-5 text-center">
                 <span className="text-xs font-semibold uppercase tracking-widest text-accent">
                   {leader.role}
                 </span>
-                <h3 className="mt-2 text-xl font-bold text-foreground">{leader.name}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{leader.bio}</p>
+                <h3 className="mt-1 text-lg font-bold text-foreground">{leader.name}</h3>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{leader.bio}</p>
               </div>
             </div>
           ))}

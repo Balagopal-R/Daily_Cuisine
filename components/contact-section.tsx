@@ -1,38 +1,33 @@
 "use client"
 
-import { useState } from "react"
-import { MapPin, Phone, Mail, Send } from "lucide-react"
+import Image from "next/image"
+import { MapPin, Phone, Mail } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
-const productOptions = [
-  "Whole Chicken",
-  "Chicken Cuts",
-  "Ready-to-Cook Products",
-  "Marinated Range",
-  "Private Label / Custom",
-  "Bulk / Export Inquiry",
+const contactDetails = [
+  {
+    icon: MapPin,
+    label: "Address",
+    value: "Daily Cuisine Pvt. Ltd.\nIndustrial Area, Hyderabad\nTelangana, India",
+  },
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "+91 9234567890",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "info@dailycuisine.in",
+  },
 ]
 
+const coordinates = {
+  latitude: 9.964543,
+  longitude: 76.437802,
+}
+
 export default function ContactSection() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    companyName: "",
-    phone: "",
-    email: "",
-    productInterest: "",
-    message: "",
-  })
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-  }
-
   const sectionRef = useScrollReveal<HTMLElement>()
 
   return (
@@ -46,177 +41,52 @@ export default function ContactSection() {
             <span className="text-balance">{"Let's Connect"}</span>
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            Reach out to discuss distribution partnerships, bulk orders, or export inquiries. Our
-            team is ready to assist you.
+            Visit our head office or reach out through phone and email for any inquiries.
           </p>
         </div>
 
-        <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
-          {/* Form */}
-          <div className="w-full lg:w-2/3">
-            <form onSubmit={handleSubmit} className="grid gap-5 sm:grid-cols-2">
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="fullName" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  required
-                  className="rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
-                  placeholder="John Doe"
-                />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="companyName" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  Company Name
-                </label>
-                <input
-                  type="text"
-                  id="companyName"
-                  name="companyName"
-                  value={formData.companyName}
-                  onChange={handleChange}
-                  required
-                  className="rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
-                  placeholder="Your Company Ltd."
-                />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="phone" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  Phone Number
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className="rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
-                  placeholder="+91 00000 00000"
-                />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
-                  placeholder="john@company.com"
-                />
-              </div>
-              <div className="flex flex-col gap-1.5 sm:col-span-2">
-                <label htmlFor="productInterest" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  Product Interest
-                </label>
-                <select
-                  id="productInterest"
-                  name="productInterest"
-                  value={formData.productInterest}
-                  onChange={handleChange}
-                  required
-                  className="rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
-                >
-                  <option value="">Select a product category</option>
-                  {productOptions.map((opt) => (
-                    <option key={opt} value={opt}>
-                      {opt}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="flex flex-col gap-1.5 sm:col-span-2">
-                <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="resize-none rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground transition-colors focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none"
-                  placeholder="Tell us about your requirements..."
-                />
-              </div>
-              <div className="sm:col-span-2">
-                <button
-                  type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground transition-all hover:scale-105 hover:bg-red-light sm:w-auto"
-                >
-                  <Send className="h-4 w-4" />
-                  Send Inquiry
-                </button>
-              </div>
-            </form>
+        {/* Map and Contact Grid */}
+        <div className="grid gap-8 lg:grid-cols-3">
+          {/* Large Map */}
+          <div className="lg:col-span-2">
+            <div className="h-full min-h-96 overflow-hidden rounded-2xl border border-border shadow-lg lg:min-h-[500px]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.677894237823!2d76.43780227550904!3d9.964543000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcdf0e8e8e8e8e9%3A0x1234567890abcdef!2sDaily%20Cuisine!5e0!3m2!1sen!2sin!4v1234567890123"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: "500px" }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
 
-          {/* Side Info */}
-          <div className="w-full lg:w-1/3">
-            <div className="rounded-xl border border-border bg-secondary p-8">
-              <h3 className="mb-6 text-lg font-bold text-foreground">Contact Information</h3>
-              <div className="flex flex-col gap-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary">
-                    <MapPin className="h-5 w-5 text-primary-foreground" />
+          {/* Contact Info Cards */}
+          <div className="space-y-6">
+            {contactDetails.map((contact) => (
+              <div
+                key={contact.label}
+                className="group relative overflow-hidden rounded-2xl border border-border bg-secondary p-6 transition-all hover:shadow-lg hover:border-accent"
+              >
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+
+                <div className="relative z-10 flex flex-col gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary transition-transform group-hover:scale-110">
+                    <contact.icon className="h-6 w-6 text-primary-foreground" />
                   </div>
                   <div>
                     <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      Address
+                      {contact.label}
                     </span>
-                    <p className="mt-1 text-sm text-foreground">
-                      Daily Cuisine Pvt. Ltd.
-                      <br />
-                      Industrial Area, Hyderabad
-                      <br />
-                      Telangana, India
+                    <p className="mt-2 whitespace-pre-line text-sm font-medium leading-relaxed text-foreground">
+                      {contact.value}
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary">
-                    <Phone className="h-5 w-5 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      Phone
-                    </span>
-                    <p className="mt-1 text-sm text-foreground">+91 00000 00000</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary">
-                    <Mail className="h-5 w-5 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      Email
-                    </span>
-                    <p className="mt-1 text-sm text-foreground">info@dailycuisine.in</p>
-                  </div>
-                </div>
               </div>
-
-              {/* Map placeholder */}
-              <div className="mt-6 overflow-hidden rounded-xl border border-border">
-                <div className="flex aspect-[4/3] items-center justify-center bg-muted">
-                  <div className="flex flex-col items-center gap-2 text-muted-foreground">
-                    <MapPin className="h-8 w-8" />
-                    <span className="text-xs font-medium">Google Maps</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
