@@ -47,14 +47,12 @@ export default function AboutSection() {
               About Us
             </span>
             <h2 className="mb-6 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              <span className="text-balance">Delivering Excellence in Frozen Poultry</span>
+              <span className="text-balance">Delivering excellence in fresh poultry and a wide range of fresh and frozen food products.</span>
             </h2>
             <p className="mb-8 leading-relaxed text-muted-foreground">
-              Daily Cuisine is a trusted frozen poultry supplier based in India, specializing in
-              whole chicken, premium cuts, and ready-to-cook products. As an authorized dealership
-              partner of Sneha Group, we ensure consistent quality, hygienic processing, and
-              temperature-controlled storage systems. Our focus is on domestic distribution and
-              global export supply.
+              Daily Cuisine is a trusted frozen poultry supplier based in India, specializing in whole chicken, premium cuts, and ready-to-cook products. We ensure consistent quality, hygienic processing, and temperature-controlled storage systems. Our focus extends to both domestic distribution and global export supply.
+
+              We also source and supply a wide range of fresh and frozen food products across domestic and international markets. Additionally, we are engaged in the sourcing and trading of various agro products globally, including premium Basmati rice, sesame seeds, chili, dry ginger, and more.
             </p>
 
             {/* Highlights */}

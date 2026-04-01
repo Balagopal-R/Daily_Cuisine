@@ -27,11 +27,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/95 shadow-md backdrop-blur-sm border-b border-border"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
+        ? "bg-background/95 shadow-md backdrop-blur-sm border-b border-border"
+        : "bg-transparent"
+        }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-8">
         {/* Logo */}
@@ -41,18 +40,16 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col">
             <span
-              className={`text-lg font-bold leading-tight tracking-tight transition-colors duration-300 ${
-                scrolled ? "text-primary" : "text-primary-foreground"
-              }`}
+              className={`text-lg font-bold leading-tight tracking-tight transition-colors duration-300 ${scrolled ? "text-primary" : "text-primary-foreground"
+                }`}
             >
               Daily Cuisine
             </span>
             <span
-              className={`text-[10px] font-medium uppercase tracking-widest transition-colors duration-300 ${
-                scrolled ? "text-muted-foreground" : "text-primary-foreground/60"
-              }`}
+              className={`text-[10px] font-medium uppercase tracking-widest transition-colors duration-300 ${scrolled ? "text-muted-foreground" : "text-primary-foreground/60"
+                }`}
             >
-              Frozen Poultry Exports
+              Fresh & Frozen Foods
             </span>
           </div>
         </Link>
@@ -63,11 +60,10 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${
-                scrolled
-                  ? "text-muted-foreground hover:text-primary"
-                  : "text-primary-foreground/80 hover:text-primary-foreground"
-              }`}
+              className={`text-sm font-medium transition-colors ${scrolled
+                ? "text-muted-foreground hover:text-primary"
+                : "text-primary-foreground/80 hover:text-primary-foreground"
+                }`}
             >
               {link.label}
             </Link>
@@ -78,9 +74,8 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`flex items-center justify-center rounded-lg p-2 lg:hidden transition-colors ${
-              scrolled ? "text-primary" : "text-primary-foreground"
-            }`}
+            className={`flex items-center justify-center rounded-lg p-2 lg:hidden transition-colors ${scrolled ? "text-primary" : "text-primary-foreground"
+              }`}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
             {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}

@@ -48,7 +48,7 @@ export default function Footer() {
                   Daily Cuisine
                 </span>
                 <span className="text-[9px] font-medium uppercase tracking-widest text-primary-foreground/50">
-                  Frozen Poultry Exports
+                  Fresh & Frozen Foods
                 </span>
               </div>
             </div>

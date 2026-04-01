@@ -12,9 +12,14 @@ const certifications = [
   },
   {
     icon: Award,
-    title: "ISO 22000 Certified",
-    description: "International standard for food safety management systems.",
+    title: "EIA Approved Processing",
+    description: "Products are processed in EIA-approved facilities, ensuring strict compliance with export-quality standards.",
   },
+  // {
+  //   icon: Award,
+  //   title: "ISO 22000 Certified",
+  //   description: "International standard for food safety management systems.",
+  // },
   {
     icon: FileCheck,
     title: "HACCP Compliant",

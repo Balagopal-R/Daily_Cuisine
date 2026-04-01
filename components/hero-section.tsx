@@ -32,7 +32,7 @@ export default function HeroSection() {
     <section id="home" className="relative min-h-screen overflow-hidden bg-primary">
       {/* Background Image */}
       <Image
-        src="/images/hero-chicken.jpg"
+        src="/images/about_background.png"
         alt="Premium frozen chicken products by Daily Cuisine"
         fill
         className="object-cover opacity-40"
@@ -53,14 +53,14 @@ export default function HeroSection() {
           </span>
 
           <h1 className="mb-6 text-4xl font-bold leading-tight tracking-tight text-primary-foreground md:text-5xl lg:text-6xl">
-            <span className="text-balance">Premium Frozen Chicken.</span>
+            <span className="text-balance">Premium Fresh & Frozen Food Products.</span>
             <br />
             <span className="text-accent">Freshness Preserved.</span>
           </h1>
 
           <p className="mb-8 max-w-xl text-base leading-relaxed text-primary-foreground/80 md:text-lg">
-            Processed under strict hygiene standards with advanced cold-chain technology.
-            Supplying export-quality poultry products across India and global markets.
+            Processed under strict hygiene standards with top-notch expertise.
+            Supplying export-quality premium food products to both domestic and international markets.
           </p>
 
           <Link

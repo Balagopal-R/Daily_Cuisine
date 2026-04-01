@@ -8,24 +8,19 @@ const contactDetails = [
   {
     icon: MapPin,
     label: "Address",
-    value: "Daily Cuisine Pvt. Ltd.\nIndustrial Area, Hyderabad\nTelangana, India",
+    value: "Daily Cuisine\n Vadayampady P.O Choondy, Kochi,\nKerala 682308, India",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 9234567890",
+    value: "+91 8089560070\n+91 8281880070",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "info@dailycuisine.in",
+    value: "dailycuisine231@gmail.com",
   },
 ]
-
-const coordinates = {
-  latitude: 9.964543,
-  longitude: 76.437802,
-}
 
 export default function ContactSection() {
   const sectionRef = useScrollReveal<HTMLElement>()

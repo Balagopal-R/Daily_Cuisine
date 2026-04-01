@@ -6,14 +6,14 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 const leaders = [
   {
     role: "Founder",
-    name: "Founder Name",
-    image: "/images/founder.jpg",
+    name: "Radhakrishnan Pillai P B",
+    image: "/images/founder_image.png",
     bio: "Brief professional background, vision for the company, commitment to quality and export excellence.",
   },
   {
     role: "Managing Director",
-    name: "Director Name",
-    image: "/images/director.jpg",
+    name: "Sanjai Krishna R",
+    image: "/images/ceo_image1.png",
     bio: "Experience in poultry supply chain management, focus on expansion and operational excellence.",
   },
 ]
